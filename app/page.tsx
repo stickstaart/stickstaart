@@ -49,7 +49,7 @@ export default function Home() {
             <div>
               <h1 className="text-4xl font-extrabold tracking-tight mb-4">Under construction.</h1>
               <p className="text-neutral-700 font-medium leading-relaxed max-w-lg">
-                Er wordt achter de schermen gebouwd aan het nieuwe portfolio van Stickstaart.
+                Er wordt achter de schermen gebouwd aan het nieuwe portfolio van StickStaart.
               </p>
             </div>
             <div className="pt-6">
