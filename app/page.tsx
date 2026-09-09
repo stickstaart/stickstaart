@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, ArrowUpRight, Code } from 'lucide-react';
 import LogoIcon from '@/components/LogoIcon';
+import ProjectGrid from '@/components/ProjectGrid'
 
 export default function Home() {
   return (
@@ -124,6 +125,23 @@ export default function Home() {
           </div>
 
         </div>
+
+        <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Eventuele hero of introductie tekst */}
+            <section className="mb-12 text-center">
+              <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+                Mijn Portfolio
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                Bekijk hieronder een selectie van live projecten die ik heb gebouwd.
+              </p>
+            </section>
+
+            {/* De projecten grid */}
+            <ProjectGrid />
+          </div>
+        </main>
 
       </div>
 
