@@ -10,7 +10,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "DGS Bouw",
-    description: "Moderne webapplicatie en bedrijfswebsite ontwikkeld met Next.js en Tailwind CSS.",
+    description: "Digitaal visitekaartje voor DGS Bouw.",
     url: "https://www.dgsbouw.nl",
     domain: "www.dgsbouw.nl",
     tags: ["Next.js", "React", "Tailwind", "TypeScript"],
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   },
   {
     title: "Doodle",
-    description: "Creatieve en dynamische webapplicatie.",
+    description: "Showcase website voor Illustrator Arne van der Ree.",
     url: "https://www.doodle.nl",
     domain: "www.doodle.nl",
     tags: ["Next.js", "React", "Tailwind", "TypeScript"],
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   {
     title: "Disturbance",
-    description: "Volledige maatwerk website en platform.",
+    description: "Vernieuwde website voor punkband Disturbance.",
     url: "https://www.disturbance.nl",
     domain: "www.disturbance.nl",
     tags: ["Next.js", "React", "Tailwind", "TypeScript"],
