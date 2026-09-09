@@ -22,7 +22,7 @@ export const projects: Project[] = [
     url: "https://www.doodle.nl",
     domain: "www.doodle.nl",
     tags: ["Web Development", "React"],
-    image: "/projects/doodle.png,
+    image: "/projects/doodle.png",
   },
   {
     title: "Disturbance",

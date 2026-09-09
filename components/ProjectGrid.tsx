@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { projects } from '../projects';
 
@@ -16,32 +17,49 @@ export default function ProjectGrid() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1"
+            className="group relative block p-6 h-64 bg-gray-900 rounded-xl border border-gray-800 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-gray-600 flex flex-col justify-between"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                {project.title}
-              </h3>
-              <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+            {/* Achtergrond Screenshot met Opacity & Hover Zoom */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover object-top opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out grayscale group-hover:grayscale-0"
+              />
+              {/* Donker verloop voor beter contrast van de tekst */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-gray-950/40" />
             </div>
 
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
-              {project.description}
-            </p>
+            {/* Content (Boven de achtergrond via z-10) */}
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                  {project.title}
+                </h3>
+                <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors" />
+              </div>
 
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+              <p className="text-gray-300 text-sm line-clamp-2">
+                {project.description}
+              </p>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center text-xs font-mono text-gray-400">
-              {project.domain}
+            <div className="relative z-10 mt-auto">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-0.5 text-xs font-medium bg-white/10 backdrop-blur-md text-gray-200 rounded-full border border-white/10"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="text-xs font-mono text-gray-400 pt-2 border-t border-white/10">
+                {project.domain}
+              </div>
             </div>
           </a>
         ))}
